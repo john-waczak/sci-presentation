@@ -1,5 +1,6 @@
 ---
-title: "Physcial Sensing and Physics-based Machine Learning for Actionable Environmental Insights"
+title: "Research Overview"
+subtitle: Combining Physical Sensing and Physics-based Machine Learning for Actionable Environmental Insights
 author: "John Waczak"
 date: today
 format:
@@ -7,65 +8,37 @@ format:
         slide-number: true
         theme: default
         margin: 0.05
+        html-math-method: katex
 bibliography: references.bib
 ---
 
-## {.smaller}
 
-:::: {.columns}
-::: {.column width="50%"}
-::: {style="font-size: 75%;"}
-**Papers I've Contributed To:**
+## What I've Been Up To Since You Last Saw Me... {.smaller}
 
-1. [Autonomous learning of new environments with a robotic team employing hyper-spectral remote sensing, comprehensive in-situ sensing and machine learning](https://www.mdpi.com/1424-8220/21/6/2240/pdf)
-2. [Decoding Physical and Cognitive Impacts of Particulate Matter Concentrations at Ultra-Fine Scales](https://www.mdpi.com/1424-8220/22/11/4240)
-3. [Data-Driven EEG Band Discovery with Decision Trees](https://www.mdpi.com/1424-8220/22/8/3048)
-4. [Unsupervised Blink Detection Using Eye Aspect Ratio Values](https://www.preprints.org/manuscript/202203.0200/download/final_file)
+- 2015: Started Undergraduate studies at Oregon State University 
+- 2019 (Spring): Graduated with BS in Physics and BS in Mathematics
+- 2019 (Fall): Began Graduate Studies in department of Physics at the University of Texas at Dallas
+- 2020: Began deploying first low-cost PM sensors throughout DFW
+- 2021: Initial deployment of Robot Team in north Texas
+- 2022: Second Robot Team demonstration for USSOCOM RDAX Dragon Spear at Fort Story VA
+- 2023: Developed Data Assimilation framework for IAQ assessment
+- 2024: Wrapping everything up...
 
+## {.center}
 
-**Code Repositories Created:**
-
-1. [RobotTeam.jl](https://github.com/john-waczak/RobotTeam.jl)
-2. [SelfOrganizingMaps.jl](https://github.com/john-waczak/SelfOrganizingMaps.jl/tree/main/docs/src)
-3. [GenerativeTopographicMapping.jl](https://github.com/john-waczak/GenerativeTopographicMapping.jl/tree/main/notes)
-4. [MLJGaussianProcesses.jl](https://github.com/john-waczak/MLJGaussianProcesses.jl/tree/main/src)
-5. [TimeSeriesTools.jl](https://github.com/john-waczak/TimeSeriesTools.jl)
-6. [AutoChem.jl](https://github.com/john-waczak/AutoChem.jl)
-7. [Photolysis.jl](https://github.com/john-waczak/Photolysis.jl/tree/613c749cc2cb39002836531fcd38ab58057dd9f2)
-
-
-:::
-:::
-::: {.column width="50%"}
-
-::: {style="font-size: 75%;"}
-**Papers in Progress (working titles):**
-
-1. Processing Pushbroom Hyperspectral Imagery for Real-time Application by an Autonomous Robotic Team
-2. Rapid quantification of chemical concentrations by an autonomous robotic team using ensemble learning with conformal prediction
-3. Time Series Methods for Uncertainty Quantification of IoT and Biometric Sensors
-4. Time Series Modeling of Particulate Matter Employing a Hybrid HAVOK-UDE Approach
-5. Comprehensively Calculating Indoor Photolysis Rates
-6. Development of a chemical data assimilation framework for indoor air quality assessment
-
-**Datasets generated**
-
-1. [Robot Team Imagery](https://ncsa.osn.xsede.org/ees230012-bucket01/RobotTeam/)
-2. [Air Quality Network Data](https://ncsa.osn.xsede.org/ees230012-bucket01/AirQualityNetwork/)
-3. [Photolysis Reference Data](https://ncsa.osn.xsede.org/ees230012-bucket01/ReferenceData/Photolysis/)
-
-:::
-:::
-::::
+ Broadly speaking, my PhD work has focused on combining *Physical Sensing* together with *Machine Learning* to produce *actionable* environmental insights. This has led to three distinct projects: 
+ 
+1. Nonlinear sensor calibration (Water Quality)
+2. Data-driven model development (Chaotic PM Time Series)
+3. Optimal fusion of data with physical models (Chemical Data Assimilation for IAQ)
 
 ::: {.notes}
-applied physics project entitled "..."
+- mappings from the quantities we have (voltages, spectra, counts) to the quantities we want (concentrations, etc...)
 :::
-
 
 # Motivation
 
-## Global Change, Air Quality, and the Need for Physical Sensing
+## Global Change, Air Quality, and the Need for Improved Physical Sensing
 
 ::: {.fragment .fade-in}
 ![](./assets/motivation/hurricanes.png){.absolute top="150" left="-30" width="400" }
@@ -175,26 +148,6 @@ Figures from [@ude-paper]
 :::
 
 
-## Outline of Proposed Work
-
-:::: {.columns}
-
-::: {.column width="33.3%"}
-![](./assets/robot-team-table.png)
-:::
-
-::: {.column width="33.3%"}
-![](./assets/air-quality-network-table.png)
-:::
-
-::: {.column width="33.3%"}
-![](./assets/chemical-data-assimilation-table.png)
-:::
-
-::::
-
-
-
 
 # Project 1: Robot Team {background-image="./assets/robot-team-deployment.png"}
 
@@ -222,7 +175,20 @@ Resolution comparison figure from [@resolution-comparison]
 :::
 ::::
 
+::: {.notes}
+- two options: in-situe sensing or remote sensing
+:::
+
+
 ## {background-image="./assets/robot-team/robotteam-1.png" background-size="contain"}
+
+### Solution: Rapid Characterization via an Autonomous Robotic Team
+
+::: {.notes}
+- Boat provides in-situe reference measurements / validation
+- Drone provides rapid survey
+- All on local network, in real time, with data-products streamed to the ground
+:::
 
 ## Physical Sensing: Autonomous Drone {.smaller}
 
@@ -245,9 +211,12 @@ Resolution comparison figure from [@resolution-comparison]
 :::
 ::::
 
+
 ## {background-image="./assets/robot-team/annotated-drone.svg" background-size="contain"}
 
-
+::: {.notes}
+- Note: soldering & wire work
+:::
 ## Physical Sensing: Autonomous Boat {.smaller}
 
 :::: {.columns}
@@ -264,6 +233,11 @@ Resolution comparison figure from [@resolution-comparison]
   - Temperature, Turbidity
   - Ions: $\mathrm{NH_4^+}$, $\mathrm{Br^{-}}$, $\mathrm{Ca^{2+}}$, $\mathrm{Cl^{-}}$, $\mathrm{NO_3^{-}}$, $\mathrm{Na^{+}}$
   - ... and more
+:::
+
+::: {.notes}
+- Fluorometers 
+- Ion-selective electrodes (membranes used for ion selection)
 :::
 
 ::: {.column width="45%"}
@@ -384,23 +358,6 @@ Resolution comparison figure from [@resolution-comparison]
 :::
 ::::
 
-## Summary & Next Steps {.smaller}
-
-:::: {.columns}
-::: {.column width="50%"}
-Code Written: 
-
-- https://github.com/john-waczak/RobotTeam.jl
-- https://github.com/mi3nts/mintsML.jl
-- https://github.com/john-waczak/SolarGeometry.jl
-- https://github.com/john-waczak/SelfOrganizingMaps.jl
-- https://github.com/john-waczak/GenerativeTopographicMapping.jl
-
-:::
-::: {.column width="50%"}
-![](./assets/robot-team-table.png){.absolute left="600" width="500"}
-:::
-::::
 
 # Project 2: MINTS Air Quality Network  {background-image="./assets/sharedair-site.gif"}
 
@@ -467,6 +424,7 @@ Code Written:
 
 :::
 ::::
+
 
 ## {background-video="./assets/air-network/dashboards-clip.mp4" background-video-loop="true" background-video-muted="true"}
 
@@ -567,28 +525,6 @@ Code Written:
 :::
 ::::
 
-
-## Summary & Next Steps {.smaller}
-
-:::: {.columns}
-::: {.column width="50%"}
-::: {style="font-size: 85%;"}
-Code Written:
-
-- https://github.com/mi3nts/AirQualityAnalysisWorkflows
-- https://github.com/mi3nts/OSN-sync
-- https://github.com/john-waczak/TimeSeriesTools.jl
-- https://github.com/john-waczak/TimeSeriesAnalysis
-
-:::
-:::
-::: {.column width="50%"}
-
-![](./assets/air-quality-network-table.png){.absolute left="600" width="500"}
-
-:::
-::::
-
 # Project 3: Chemical Data Assimilation for Indoor Air Quality
 
 ## Motivation {.smaller}
@@ -649,6 +585,10 @@ Code Written:
 ![](./assets/photolysis-infographic.png)
 :::
 ::::
+
+## 
+
+![](./assets/chemical-data-assimilation/spectral-flux-density.svg)
 
 ## {.smaller}
 
@@ -764,43 +704,7 @@ Assimilation step:
 ::::
 
 
-
-## Summary & Next Steps {.smaller}
-
-:::: {.columns}
-::: {.column width="50%"}
-::: {style="font-size: 85%;"}
-Code written:
-
-- https://github.com/john-waczak/activePure_measurement_software
-- https://github.com/john-waczak/AP-labs-measurement-analyses
-- https://github.com/john-waczak/MLJGaussianProcesses.jl
-- https://github.com/john-waczak/Photolysis.jl
-- https://github.com/john-waczak/AutoChem.jl
-:::
-:::
-::: {.column width="50%"}
-![](./assets/chemical-data-assimilation-table.png){.absolute left="600" width="450"}
-:::
-::::
-
 ## Thank you for listening!
-
-:::: {.columns}
-
-::: {.column width="33.3%"}
-![](./assets/robot-team-table.png)
-:::
-
-::: {.column width="33.3%"}
-![](./assets/air-quality-network-table.png)
-:::
-
-::: {.column width="33.3%"}
-![](./assets/chemical-data-assimilation-table.png)
-:::
-
-::::
 
 
 # Extras
