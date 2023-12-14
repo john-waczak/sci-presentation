@@ -8,7 +8,7 @@ format:
         slide-number: true
         theme: default
         margin: 0.05
-        html-math-method: katex
+
 bibliography: references.bib
 ---
 
@@ -371,7 +371,6 @@ Resolution comparison figure from [@resolution-comparison]
 - reference monitors range in price from the order of \$10,000 to \$100,000 and more.[^4]
 - EPA guidelines for criteria pollutants are set at 8 and 24 hour averages.[^5]
 - However PM levels display high spatio-temporal variability meaning 24 hr averages mask acute exposures
-- Price of reference instruments is prohibitive
 - **Need**: A dense network of low-cost air quality monitors with high sampling rates
 
 [^4]: Source: [@epa-low-cost]
@@ -586,9 +585,6 @@ Resolution comparison figure from [@resolution-comparison]
 :::
 ::::
 
-## 
-
-![](./assets/chemical-data-assimilation/spectral-flux-density.svg)
 
 ## {.smaller}
 
@@ -684,7 +680,7 @@ All elementary reactions taken together form a system whose dynamics are describ
 
 Forecasting step:
 \begin{align}
-    u_k^{(b)} &= \mathcal{M}(u_{k-1}^{(a)}) \\
+    u_k^{(b)} &= M(u_{k-1}^{(a)}) \\
     B_k &= D_M(u_{k-1}^{(a)})P_{k-1}D_M^T(u_{k-1}^{(a)}) + Q_k
 \end{align}
 
